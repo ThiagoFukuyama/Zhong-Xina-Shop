@@ -1,0 +1,263 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat&family=Titillium+Web:wght@300&display=swap');
+
+
+/* ------------------------------ 
+------- GENERAL STYLES ---------- */
+
+:root {
+    --clr-primary: #a01c1c;
+    --clr-accent: #c7a4a4;
+
+    --fc-primary: #e2e215;
+    --ff-primary: 'Times New Roman', Times, serif;
+    --ff-secondary: 'Montserrat', sans-serif;
+
+    --borders: solid var(--clr-accent);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    animation: fade-in 2s;
+}
+
+body {
+    line-height: 1.6;
+    background-color: var(--clr-primary);
+    color: var(--fc-primary);
+    font-family: var(--ff-primary);
+    overflow: auto;
+}
+
+img {
+    display: block;
+}
+
+a {
+    color: var(--fc-primary);
+    text-decoration: none;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+.container {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    gap: 3rem;
+    padding-top: 1rem;
+}
+
+
+
+/* ---------------------------
+--------- SHOP LAYOUT -------- */
+
+.shop-front {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.shop-front {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+}
+
+.play-btn {
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    right: 0;
+    background-color: var(--fc-primary);
+    color: var(--clr-primary);
+    border: 0;
+    cursor: pointer;
+    border-bottom-left-radius: 40%;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    position: relative;
+    width: 100%;
+    border: 3px var(--borders);
+}
+
+.img-container {
+    position: relative;
+}
+
+#zhong-xina {
+    width: 300px;
+    border-right: 3px var(--borders);
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-right: 1.275rem;
+    gap: 3rem;
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    font-family: monospace;
+}
+
+.display__img {
+    justify-self: flex-end;
+    width: 200px;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+}
+
+.display__price {
+    display: block;
+    position: absolute;
+    text-align: center;
+    padding: .25rem;
+    font-size: 1.5rem;
+    right: 0;
+    bottom: 0;
+}
+
+main {
+    width: 100%;
+}
+
+.items-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 50vh;
+    padding-inline: 0 1rem;
+    padding-block: 0;
+    gap: 1rem;
+    overflow: auto;
+}
+
+
+
+/* --------------------------- 
+---------- SHOP ITEMS -------- */
+
+.item {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+    cursor: pointer;
+    border: 2px var(--borders);
+    font-family: var(--ff-primary);
+}
+
+.item__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.item__title {
+    font-size: 1.4rem;
+    font-family: var(--ff-secondary);
+}
+
+.item__price {
+    font-size: 1.8rem;
+}
+
+.item__description, .item__img {
+    display: none;
+}
+
+.speaks {
+    animation: speaking 0.2s linear;
+    animation-iteration-count: 19;
+}
+
+.background-transparent {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* --------------------------- 
+--------- KEYFRAMES----------- */
+
+@keyframes speaking {
+    from {
+        content: url("/img/zhong-xina-sprite-1.png");
+    }
+
+    to {
+        content: url("/img/zhong-xina-sprite-2.png");
+    }
+} 
+
+@keyframes fade-in {
+    from {
+        filter: brightness(0);
+    }
+
+    to {
+        filter: brightness(100%);
+    }
+}
+
+
+
+/* --------------------------- 
+--------- MEDIA QUERIES- ----- */
+
+@media all and (max-width: 930px) {
+    .flex-container {
+        flex-direction: column;
+        text-align: center;
+        padding-block: 1rem;
+        padding-inline: 1rem;
+    }
+
+    .img-container {
+        width: 300px;
+    }
+}
+
+
+
+/* --------------------------- 
+--------- SCROLLBAR ---------- */
+
+.items-container::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+
+.items-container::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border: 2px var(--borders);
+}
+  
+
+.items-container::-webkit-scrollbar-thumb {
+    background-color: var(--clr-accent);
+}
+  
+
+.items-container::-webkit-scrollbar-thumb:hover {
+    background-color: #a58a8a;
+    border-color: #a58a8a;
+}
