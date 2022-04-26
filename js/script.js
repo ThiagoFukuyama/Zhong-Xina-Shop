@@ -1,66 +1,74 @@
 
-const playBtn = document.querySelector("#playBtn")
-
-playBtn.addEventListener("click", () => {
-  const bgMusic = new Audio("audio/red-sun-in-the-sky.mp3").play()
-})
+window.addEventListener("click", play_music)
 
 
+const zhong_xina = document.querySelector("#zhong-xina")
 
-// ----------------------------------------------
-// ---------- GET EVERY ELEMENT NEEDED ----------
+const name_display = document.querySelector("#name-display")
+const text_display = document.querySelector("#text-display")
+const img_display = document.querySelector("#img-display")
+const price_display = document.querySelector("#price-display")
 
-const zhongXina = document.querySelector("#zhong-xina")
+const items = Array.from(document.querySelectorAll(".item"))
 
-const textDisplay = document.querySelector("#text-display")
-const imgDisplay = document.querySelector("#img-display")
-const priceDisplay = document.querySelector("#display-price")
+const vine_boom = new Audio("audio/vine-boom.mp3")
 
-let items = Array.from(document.querySelectorAll(".item"))
-
-const vineBoom = new Audio("audio/vine-boom.mp3")
+const bg_music = new Audio("audio/red-sun-in-the-sky.mp3")
+bg_music.loop = true
 
 
 
-// -----------------------------------------------------
-// ------- ON MOUSE ON ITEMS, DO THE MODIFICATIONS -----
 
-for (let i = 0; i < items.length; i++) {
-  items[i].addEventListener("mouseover", () => {
+items.forEach((item) => {
+  item.addEventListener("mouseover", () => {
 
-    zhongXina.className = "speaks"
+    zhong_xina.className = "speaks"
 
-    textDisplay.textContent = items[i].querySelector(".item__description").textContent
-    imgDisplay.src = items[i].querySelector(".item__img").src
+    name_display.textContent = item.querySelector(".item__name").textContent
 
-    priceDisplay.textContent = items[i].querySelector(".item__price").textContent
-    priceDisplay.classList.add("background-transparent")
+    text_display.textContent = item.querySelector(".item__description").textContent
+
+    img_display.src = item.querySelector(".item__img").src
+
+    price_display.textContent = item.querySelector(".item__price").textContent
+
+    price_display.classList.add("background-transparent")
   })
-} 
+})
        
+click_mouseout("mouseout", "Click an item to buy it.")
+click_mouseout("click", "Thanks!")
 
 
-// -----------------------------------------------------
-// ------- MOUSE OUT AND CLICK FUNCTION-----------------
 
-function interactions(event, string) {
-  for (let i = 0; i < items.length; i++) {
-    items[i].addEventListener(event, () => {
+
+function click_mouseout(event, default_text) {
+  items.forEach((item) => {
+    item.addEventListener(event, () => {
   
-      zhongXina.className = ""
-  
-      textDisplay.textContent = string
-      imgDisplay.src = ""
-  
-      priceDisplay.textContent = ""
-      priceDisplay.classList.remove("background-transparent")
+      zhong_xina.className = ""
 
+      name_display.textContent = ""
+      
+      text_display.textContent = default_text
+
+      img_display.src = ""
+      
+      price_display.textContent = ""
+      price_display.classList.remove("background-transparent")
+    
       if (event === "click") {
-        vineBoom.play()
+        vine_boom.play()
       }
     })
-  } 
+  })
 }
 
-interactions("mouseout", "Click an item to buy it.")
-interactions("click", "Thanks!")
+
+
+
+function play_music() {
+  bg_music.play()
+
+  this.removeEventListener("click", play_music)
+}

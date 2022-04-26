@@ -6,17 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zhong Xina Shop</title>
     <link rel="stylesheet" href="./css/styles.css" />
-    <script
-      src="https://kit.fontawesome.com/25fa74a7ac.js"
-      crossorigin="anonymous"
-    ></script>
     <script src="./js/script.js" defer></script>
   </head>
   <body>
     <div class="wrapper">
-      <button type="button" class="play-btn" id="playBtn">
-        <i class="fa-solid fa-play"></i>
-      </button>
       <div class="container">
         <header>
           <h1 class="shop-front">Zhong Xina Shop</h1>
@@ -30,14 +23,17 @@
               />
             </div>
             <div class="display">
-              <p id="text-display">
-                Welcome, traveler. This wasteland is dangerous, so you should'nt
-                be walking unprepared. What do you think of taking a look at my
-                goods?
-              </p>
+              <div>
+                <h2 class="display__name" id="name-display"></h2>
+                <p id="text-display">
+                  Welcome, traveler. This wasteland is dangerous, so you should'nt
+                  be walking unprepared. What do you think of taking a look at my
+                  goods?
+                </p>
+              </div>
               <div class="img-container">
                 <img src="" class="display__img" id="img-display" />
-                <span class="display__price" id="display-price"></span>
+                <span class="display__price" id="price-display"></span>
               </div>
             </div>
           </div>
@@ -53,7 +49,7 @@
                   class="item__img"
                 />
                 <div class="item__content">
-                  <h2 class="item__title">Bing Chilling</h2>
+                  <h2 class="item__name">Bing Chilling</h2>
                   <span class="item__price">¥ 5.00</span>
                 </div>
                 <p class="item__description">
@@ -69,7 +65,7 @@
                   class="item__img"
                 />
                 <div class="item__content">
-                  <h2 class="item__title">Lao Gan Ma</h2>
+                  <h2 class="item__name">Lao Gan Ma</h2>
                   <span class="item__price">¥ 15.00</span>
                 </div>
                 <p class="item__description">
@@ -85,7 +81,7 @@
                   class="item__img"
                 />
                 <div class="item__content">
-                  <h2 class="item__title">Mysterious Dumpling</h2>
+                  <h2 class="item__name">Mysterious Dumpling</h2>
                   <span class="item__price">¥ 8.50</span>
                 </div>
                 <p class="item__description">
@@ -102,7 +98,7 @@
                   class="item__img"
                 />
                 <div class="item__content">
-                  <h2 class="item__title">Bronze Hand Held Cannon</h2>
+                  <h2 class="item__name">Bronze Hand Held Cannon</h2>
                   <span class="item__price">¥ 45.00</span>
                 </div>
                 <p class="item__description">
@@ -118,7 +114,7 @@
                   class="item__img"
                 />
                 <div class="item__content">
-                  <h2 class="item__title">Miaodao</h2>
+                  <h2 class="item__name">Miaodao</h2>
                   <span class="item__price">¥ 60.00</span>
                 </div>
                 <p class="item__description">
@@ -134,7 +130,7 @@
                   class="item__img"
                 />
                 <div class="item__content">
-                  <h2 class="item__title">Super Idol Companion</h2>
+                  <h2 class="item__name">Super Idol Companion</h2>
                   <span class="item__price">¥ 8500.00</span>
                 </div>
                 <p class="item__description">
@@ -150,7 +146,7 @@
                   class="item__img"
                 />
                 <div class="item__content">
-                  <h2 class="item__title">The Wok Companion</h2>
+                  <h2 class="item__name">The Wok Companion</h2>
                   <span class="item__price">¥ 10000.00</span>
                 </div>
                 <p class="item__description">
@@ -166,7 +162,7 @@
                   class="item__img"
                 />
                 <div class="item__content">
-                  <h2 class="item__title">Century Egg</h2>
+                  <h2 class="item__name">Century Egg</h2>
                   <span class="item__price">¥ 5000000.00</span>
                 </div>
                 <p class="item__description">

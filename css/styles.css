@@ -26,6 +26,7 @@
 
 html {
     animation: fade-in 2s;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -36,13 +37,18 @@ body {
     overflow: auto;
 }
 
-img {
-    display: block;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
 }
 
-a {
-    color: var(--fc-primary);
-    text-decoration: none;
+img {
+    display: block;
 }
 
 .wrapper {
@@ -68,20 +74,8 @@ a {
 
 .shop-front {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     font-size: clamp(2.5rem, 5vw, 5rem);
-}
-
-.play-btn {
-    width: 50px;
-    aspect-ratio: 1 / 1;
-    position: absolute;
-    right: 0;
-    background-color: var(--fc-primary);
-    color: var(--clr-primary);
-    border: 0;
-    cursor: pointer;
-    border-bottom-left-radius: 40%;
 }
 
 .flex-container {
@@ -111,6 +105,10 @@ a {
     gap: 3rem;
     font-size: clamp(1.25rem, 4vw, 1.75rem);
     font-family: monospace;
+}
+
+.display__name {
+    margin-bottom: 1rem;
 }
 
 .display__img {
@@ -143,6 +141,7 @@ main {
     padding-block: 0;
     gap: 1rem;
     overflow: auto;
+    scroll-behavior: smooth;
 }
 
 
@@ -169,7 +168,7 @@ main {
     gap: 1.5rem;
 }
 
-.item__title {
+.item__name {
     font-size: 1.4rem;
     font-family: var(--ff-secondary);
 }
@@ -251,11 +250,12 @@ main {
   
 
 .items-container::-webkit-scrollbar-thumb {
-    background-color: var(--clr-accent);
+    background-color: #a58a8a;
+    border-color: #a58a8a;
 }
   
 
 .items-container::-webkit-scrollbar-thumb:hover {
-    background-color: #a58a8a;
-    border-color: #a58a8a;
+    background-color: var(--clr-accent);
+    border-color: var(--clr-accent);
 }
