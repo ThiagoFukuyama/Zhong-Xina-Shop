@@ -102,6 +102,7 @@ a {
 
 #zhong-xina {
     width: 300px;
+    min-height: 300px;
     border-right: 3px var(--borders);
 }
 
