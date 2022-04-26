@@ -69,9 +69,6 @@ a {
 .shop-front {
     text-align: center;
     margin-bottom: 3rem;
-}
-
-.shop-front {
     font-size: clamp(2.5rem, 5vw, 5rem);
 }
 
